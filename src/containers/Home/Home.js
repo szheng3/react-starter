@@ -1,3 +1,5 @@
+import 'jquery';
+import 'popper.js';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
@@ -5,7 +7,7 @@ import { CounterButton, GithubButton } from 'components';
 import config from 'config';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
-
+import 'mdbreact/dist/css/mdb.css';
 
 @connect(state => ({
   online: state.online
@@ -15,6 +17,12 @@ export default class Home extends Component {
     online: PropTypes.bool.isRequired
   };
   render() {
+    if (typeof window !== 'undefined') {
+      require('node-waves');
+      require('bootstrap');
+    }
+    const { Button, Input } = require('mdbreact');
+
     require('./home.css');
     const { online } = this.props;
     const styles = require('./Home.scss');
@@ -210,6 +218,16 @@ export default class Home extends Component {
           </ul>
 
           <h3>Features demonstrated in this project</h3>
+          <h2 className="mb-5">Form register</h2>
+          <form>
+            <p className="h5 text-center mb-4">Sign up</p>
+            <Input label="Your name" icon="user" group type="email" validate error="wrong" success="right" />
+            <Input label="Your email" icon="envelope" group type="email" validate error="wrong" success="right" />
+            <Input label="Your password" icon="lock" group type="password" validate />
+            <div className="text-center">
+              <Button color="deep-orange">Sign up</Button>
+            </div>
+          </form>
 
           <dl>
             <dt>Multiple components subscribing to same redux store slice</dt>

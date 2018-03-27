@@ -141,6 +141,13 @@ var webpackConfig = module.exports = {
         }
       }
     }),
+    new webpack.ProvidePlugin({
+      '$': 'jquery',
+      'jQuery': 'jquery',
+      'window.jQuery': 'jquery',
+      'Popper': 'popper.js',
+      'Waves': 'node-waves'
+    }),
 
     // hot reload
     new webpack.HotModuleReplacementPlugin(),
