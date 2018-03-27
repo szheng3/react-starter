@@ -2,13 +2,15 @@ import 'jquery';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { CounterButton, GithubButton, ProfileCard } from 'components';
+import { CounterButton, GithubButton, ProfileCard, ChartCard } from 'components';
 import config from 'config';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 import 'mdbreact/dist/css/mdb.css';
 import avatar from 'assets/img/faces/marc.jpg';
 import { Grid } from 'material-ui';
+import { AccessTime } from 'material-ui-icons';
+import ChartistGraph from 'react-chartist';
 
 @connect(state => ({
   online: state.online
@@ -29,6 +31,23 @@ export default class Home extends Component {
     const styles = require('./Home.scss');
     // require the logo image both from client and server
     const logoImage = require('./logo.png');
+    const data = {
+      labels: ['W1', 'W2', 'W3', 'W4', 'W5', 'W6', 'W7', 'W8', 'W9', 'W10'],
+      series: [[1, 2, 4, 8, 6, -2, -1, -4, -6, -2]]
+    };
+
+    const options = {
+      high: 10,
+      low: -10,
+      axisX: {
+        labelInterpolationFnc(value, index) {
+          return index % 2 === 0 ? value : null;
+        }
+      }
+    };
+
+    const type = 'Bar';
+
     return (
       <div className={styles.home}>
         <Helmet title="Home" />
@@ -42,6 +61,17 @@ export default class Home extends Component {
             <h1>{config.app.title}</h1>
 
             <h2>{config.app.description}</h2>
+            <Grid item xs={12} sm={12} md={6}>
+              <ChartCard
+                chart={<ChartistGraph data={data} options={options} type={type} />}
+                chartColor="orange"
+                title="Email Subscriptions"
+                text="Last Campaign Performance"
+                statIcon={AccessTime}
+                statText="campaign sent 2 days ago"
+              />
+            </Grid>
+
             <Grid item xs={12} sm={12} md={4}>
               <ProfileCard
                 avatar={avatar}
