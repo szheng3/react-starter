@@ -25,6 +25,7 @@ export default class Home extends Component {
       require('bootstrap');
     }
     const { Button, Input } = require('mdbreact');
+    // const { emailsSubscriptionChart } = typeof window !== 'undefined' ? require('variables/charts') : {};
 
     require('./home.css');
     const { online } = this.props;
