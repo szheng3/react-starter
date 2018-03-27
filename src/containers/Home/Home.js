@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import { CounterButton, GithubButton } from 'components';
+import {Link} from 'react-router-dom';
+import {CounterButton, GithubButton} from 'components';
 import config from 'config';
 import Helmet from 'react-helmet';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
+
 
 @connect(state => ({
   online: state.online
@@ -15,6 +16,7 @@ export default class Home extends Component {
   };
 
   render() {
+    require('./home.css');
     const { online } = this.props;
     const styles = require('./Home.scss');
     // require the logo image both from client and server
@@ -267,7 +269,7 @@ export default class Home extends Component {
 
           <h3>From the author</h3>
 
-          <p>
+          <p className="wocao">
             I cobbled this together from a wide variety of similar "starter" repositories. As I post this in June 2015,
             all of these libraries are right at the bleeding edge of web development. They may fall out of fashion as
             quickly as they have come into it, but I personally believe that this stack is the future of web development
