@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router-dom';
-import {CounterButton, GithubButton} from 'components';
+import { Link } from 'react-router-dom';
+import { CounterButton, GithubButton } from 'components';
 import config from 'config';
 import Helmet from 'react-helmet';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 
 @connect(state => ({
@@ -14,7 +14,6 @@ export default class Home extends Component {
   static propTypes = {
     online: PropTypes.bool.isRequired
   };
-
   render() {
     require('./home.css');
     const { online } = this.props;
