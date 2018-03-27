@@ -3,11 +3,13 @@ import 'popper.js';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { CounterButton, GithubButton } from 'components';
+import { CounterButton, GithubButton, ProfileCard } from 'components';
 import config from 'config';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 import 'mdbreact/dist/css/mdb.css';
+import avatar from 'assets/img/faces/marc.jpg';
+import { Grid } from 'material-ui';
 
 @connect(state => ({
   online: state.online
@@ -41,6 +43,23 @@ export default class Home extends Component {
             <h1>{config.app.title}</h1>
 
             <h2>{config.app.description}</h2>
+            <Grid item xs={12} sm={12} md={4}>
+              <ProfileCard
+                avatar={avatar}
+                subtitle="CEO / CO-FOUNDER"
+                title="Alec Thompson"
+                description="Don't be scared of the
+                 truth because we need to restart the human
+                  foundation in truth And I love you like Kanye
+                   loves Kanye I love Rick Owens’ bed design but the back is...
+                  "
+                footer={
+                  <Button color="primary" round>
+                    Follow
+                  </Button>
+                }
+              />
+            </Grid>
 
             <p>
               <a

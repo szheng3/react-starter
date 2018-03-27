@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import { provideHooks } from 'redial';
-import MiniInfoBar from 'components/MiniInfoBar/MiniInfoBar';
+import { MiniInfoBar } from 'components';
 import { isLoaded as isInfoLoaded, load as loadInfo } from 'redux/modules/info';
 
 @provideHooks({

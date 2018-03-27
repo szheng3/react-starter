@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import { provideHooks } from 'redial';
 import { connect } from 'react-redux';
 import reducer, * as widgetActions from 'redux/modules/widgets';
-import WidgetForm from 'components/WidgetForm/WidgetForm';
+import { WidgetForm } from 'components';
 
 const { isLoaded, load: loadWidgets } = widgetActions;
 

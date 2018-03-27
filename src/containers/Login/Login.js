@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
-import LoginForm from 'components/LoginForm/LoginForm';
-import FacebookLogin from 'components/FacebookLogin/FacebookLogin';
+import { LoginForm, FacebookLogin } from 'components';
 import * as authActions from 'redux/modules/auth';
 import * as notifActions from 'redux/modules/notifs';
 

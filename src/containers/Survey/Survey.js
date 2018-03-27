@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import { initialize } from 'redux-form';
 import reducer from 'redux/modules/survey';
-import SurveyForm from 'components/SurveyForm/SurveyForm';
+import { SurveyForm } from 'components';
 
 @provideHooks({
   fetch: ({ store: { inject } }) => inject({ survey: reducer })
