@@ -5,97 +5,96 @@
  *
  */
 
-import ChartCard from './ThirdParty/Cards/ChartCard.jsx';
-import ProfileCard from './ThirdParty/Cards/ProfileCard.jsx';
-import RegularCard from './ThirdParty/Cards/RegularCard.jsx';
-import StatsCard from './ThirdParty/Cards/StatsCard.jsx';
-import TasksCard from './ThirdParty/Cards/TasksCard.jsx';
+import ChartCard from './thirdParty/Cards/ChartCard.jsx';
+import ProfileCard from './thirdParty/Cards/ProfileCard.jsx';
+import RegularCard from './thirdParty/Cards/RegularCard.jsx';
+import StatsCard from './thirdParty/Cards/StatsCard.jsx';
+import TasksCard from './thirdParty/Cards/TasksCard.jsx';
 
 // ##############################
 // // // CustomButtons
 // #############################
 
-import Button from './ThirdParty/CustomButtons/Button.jsx';
-import IconButton from './ThirdParty/CustomButtons/IconButton.jsx';
+import Button from './thirdParty/CustomButtons/Button.jsx';
+import IconButton from './thirdParty/CustomButtons/IconButton.jsx';
 
 // ##############################
 // // // CustomInput
 // #############################
 
-import CustomInput from './ThirdParty/CustomInput/CustomInput.jsx';
+import CustomInput from './thirdParty/CustomInput/CustomInput.jsx';
 
 // ##############################
 // // // Footer
 // #############################
 
-import Footer from './ThirdParty/Footer/Footer.jsx';
+import Footer from './thirdParty/Footer/Footer.jsx';
 
 // ##############################
 // // // Grid
 // #############################
 
-import ItemGrid from './ThirdParty/Grid/ItemGrid.jsx';
+import ItemGrid from './thirdParty/Grid/ItemGrid.jsx';
 
 // ##############################
 // // // Header
 // #############################
 
-import Header from './ThirdParty/Header/Header.jsx';
-import HeaderLinks from './ThirdParty/Header/HeaderLinks.jsx';
+import Header from './thirdParty/Header/Header.jsx';
+import HeaderLinks from './thirdParty/Header/HeaderLinks.jsx';
 
 // ##############################
 // // // Sidebar
 // #############################
 
-import Sidebar from './ThirdParty/Sidebar/Sidebar.jsx';
+import Sidebar from './thirdParty/Sidebar/Sidebar.jsx';
 
 // ##############################
 // // // Snackbar
 // #############################
 
-import Snackbar from './ThirdParty/Snackbar/Snackbar.jsx';
-import SnackbarContent from './ThirdParty/Snackbar/SnackbarContent.jsx';
+import Snackbar from './thirdParty/Snackbar/Snackbar.jsx';
+import SnackbarContent from './thirdParty/Snackbar/SnackbarContent.jsx';
 
 // ##############################
 // // // Table
 // #############################
 
-import Table from './ThirdParty/Table/Table.jsx';
+import Table from './thirdParty/Table/Table.jsx';
 
 // ##############################
 // // // Tasks
 // #############################
 
-import Tasks from './ThirdParty/Tasks/Tasks.jsx';
+import Tasks from './thirdParty/Tasks/Tasks.jsx';
 
 // ##############################
 // // // Typography
 // #############################
 
-import P from './ThirdParty/Typography/P.jsx';
-import Quote from './ThirdParty/Typography/Quote.jsx';
-import Muted from './ThirdParty/Typography/Muted.jsx';
-import Primary from './ThirdParty/Typography/Primary.jsx';
-import Info from './ThirdParty/Typography/Info.jsx';
-import Success from './ThirdParty/Typography/Success.jsx';
-import Warning from './ThirdParty/Typography/Warning.jsx';
-import Danger from './ThirdParty/Typography/Danger.jsx';
-import Small from './ThirdParty/Typography/Small.jsx';
-import A from './ThirdParty/Typography/A.jsx';
+import P from './thirdParty/Typography/P.jsx';
+import Quote from './thirdParty/Typography/Quote.jsx';
+import Muted from './thirdParty/Typography/Muted.jsx';
+import Primary from './thirdParty/Typography/Primary.jsx';
+import Info from './thirdParty/Typography/Info.jsx';
+import Success from './thirdParty/Typography/Success.jsx';
+import Warning from './thirdParty/Typography/Warning.jsx';
+import Danger from './thirdParty/Typography/Danger.jsx';
+import Small from './thirdParty/Typography/Small.jsx';
+import A from './thirdParty/Typography/A.jsx';
 
-
-export CounterButton from './ThirdParty/CounterButton/CounterButton';
-export FacebookLogin from './ThirdParty/FacebookLogin/FacebookLogin';
-export GithubButton from './ThirdParty/GithubButton/GithubButton';
-export InfoBar from './ThirdParty/InfoBar/InfoBar';
-export LoginForm from './ThirdParty/LoginForm/LoginForm';
-export MiniInfoBar from './ThirdParty/MiniInfoBar/MiniInfoBar';
-export Notifs from './ThirdParty/Notifs/Notifs';
-export Provider from './ThirdParty/Provider/Provider';
-export ReduxAsyncConnect from './ThirdParty/ReduxAsyncConnect/ReduxAsyncConnect';
-export RegisterForm from './ThirdParty/RegisterForm/RegisterForm';
-export SurveyForm from './ThirdParty/SurveyForm/SurveyForm';
-export WidgetForm from './ThirdParty/WidgetForm/WidgetForm';
+export CounterButton from './thirdParty/CounterButton/CounterButton';
+export FacebookLogin from './thirdParty/FacebookLogin/FacebookLogin';
+export GithubButton from './thirdParty/GithubButton/GithubButton';
+export InfoBar from './thirdParty/InfoBar/InfoBar';
+export LoginForm from './thirdParty/LoginForm/LoginForm';
+export MiniInfoBar from './thirdParty/MiniInfoBar/MiniInfoBar';
+export Notifs from './thirdParty/Notifs/Notifs';
+export Provider from './thirdParty/Provider/Provider';
+export ReduxAsyncConnect from './thirdParty/ReduxAsyncConnect/ReduxAsyncConnect';
+export RegisterForm from './thirdParty/RegisterForm/RegisterForm';
+export SurveyForm from './thirdParty/SurveyForm/SurveyForm';
+export WidgetForm from './thirdParty/WidgetForm/WidgetForm';
 export {
   // Cards
   ChartCard,
