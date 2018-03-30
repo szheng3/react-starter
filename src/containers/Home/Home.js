@@ -7,6 +7,9 @@ import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 import { Grid } from 'material-ui';
 import 'mdbreact/dist/css/mdb.css';
+import { AccessTime } from 'material-ui-icons';
+import { isClient } from '../../utils/isOnline';
+import ChartCard from '../../components/thirdParty/Cards/ChartCard';
 
 @connect(state => ({
   online: state.online
@@ -17,8 +20,6 @@ export default class Home extends Component {
   };
 
   render() {
-    const isClient = typeof window !== 'undefined';
-
     require('./home.css');
     const { online } = this.props;
     const styles = require('./Home.scss');
@@ -91,8 +92,23 @@ export default class Home extends Component {
             )}
 
             {isClient && (
-              <Grid item xs={12} sm={12} md={4}>
-                <Bar data={data} />
+              <Grid item xs={12} sm={12} md={6}>
+                <ChartCard
+                  chart={
+                    <Bar
+                      data={data}
+                      options={{
+                        responsive: true,
+                        maintainAspectRatio: true
+                      }}
+                    />
+                  }
+                  chartColor="orange"
+                  title="Email Subscriptions"
+                  text="Last Campaign Performance"
+                  statIcon={AccessTime}
+                  statText="campaign sent 2 days ago"
+                />
               </Grid>
             )}
 

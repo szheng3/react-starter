@@ -18,3 +18,4 @@ export default function isOnline(path = '/favicon.ico') {
     xhr.send(null);
   });
 }
+export const isClient = typeof window !== 'undefined';
