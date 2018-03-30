@@ -19,7 +19,7 @@ export default class Home extends Component {
     online: PropTypes.bool.isRequired
   };
 
-  render() {
+  rendenr() {
     require('./home.css');
     const { online } = this.props;
     const styles = require('./Home.scss');
