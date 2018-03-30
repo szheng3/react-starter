@@ -5,9 +5,7 @@ import { CounterButton, GithubButton, ProfileCard } from 'components';
 import config from 'config';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
-import avatar from 'assets/img/faces/marc.jpg';
 import { Grid } from 'material-ui';
-import ChartistGraph from 'react-chartist';
 import 'mdbreact/dist/css/mdb.css';
 
 @connect(state => ({
@@ -18,20 +16,13 @@ export default class Home extends Component {
     online: PropTypes.bool.isRequired
   };
 
-  componentDidMount() {
-    require('chartist');
-  }
-
   render() {
     require('./home.css');
     const { online } = this.props;
     const styles = require('./Home.scss');
     // require the logo image both from client and server
     const logoImage = require('./logo.png');
-    const simpleLineChartData = {
-      labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-      series: [[12, 9, 7, 8, 5], [2, 1, 3.5, 7, 3], [1, 3, 4, 5, 6]]
-    };
+    const avatar = require('assets/img/faces/marc.jpg');
 
     const isClient = typeof window !== 'undefined';
 
@@ -67,7 +58,7 @@ export default class Home extends Component {
 
             <h2>{config.app.description}</h2>
 
-            {isClient ? (
+            {isClient && (
               <form>
                 <p className="h5 text-center mb-4">Sign up</p>
                 <Input label="Your name" icon="user" group type="email" validate error="wrong" success="right" />
@@ -77,8 +68,6 @@ export default class Home extends Component {
                   <Button color="deep-orange">Sign up</Button>
                 </div>
               </form>
-            ) : (
-              <div>Loading map</div>
             )}
 
             {isClient && (
@@ -101,15 +90,10 @@ export default class Home extends Component {
               </Grid>
             )}
 
-            {isClient && <ChartistGraph data={simpleLineChartData} type="Line" />}
-
             {isClient && (
-              <Bar
-                data={data}
-                options={{
-                  maintainAspectRatio: false
-                }}
-              />
+              <Grid item xs={12} sm={12} md={4}>
+                <Bar data={data} />
+              </Grid>
             )}
 
             <p>
