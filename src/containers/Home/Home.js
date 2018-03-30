@@ -17,14 +17,14 @@ export default class Home extends Component {
   };
 
   render() {
+    const isClient = typeof window !== 'undefined';
+
     require('./home.css');
     const { online } = this.props;
     const styles = require('./Home.scss');
     // require the logo image both from client and server
     const logoImage = require('./logo.png');
     const avatar = require('assets/img/faces/marc.jpg');
-
-    const isClient = typeof window !== 'undefined';
 
     const { Bar } = isClient ? require('react-chartjs-2') : {};
     const { Button, Input } = isClient ? require('mdbreact') : {};
