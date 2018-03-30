@@ -5,12 +5,10 @@ import { CounterButton, GithubButton, ProfileCard } from 'components';
 import config from 'config';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
-import 'mdbreact/dist/css/mdb.css';
 import avatar from 'assets/img/faces/marc.jpg';
 import { Grid } from 'material-ui';
-
-let Button,
-  Input;
+import ChartistGraph from 'react-chartist';
+import 'mdbreact/dist/css/mdb.css';
 
 @connect(state => ({
   online: state.online
@@ -20,17 +18,8 @@ export default class Home extends Component {
     online: PropTypes.bool.isRequired
   };
 
-  constructor() {
-    super();
-    this.state = { showMap: false };
-  }
-
   componentDidMount() {
-    require('node-waves');
-    require('bootstrap');
-    Button = require('mdbreact').Button;
-    Input = require('mdbreact').Input;
-    this.setState({ showMap: true });
+    require('chartist');
   }
 
   render() {
@@ -39,6 +28,30 @@ export default class Home extends Component {
     const styles = require('./Home.scss');
     // require the logo image both from client and server
     const logoImage = require('./logo.png');
+    const simpleLineChartData = {
+      labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      series: [[12, 9, 7, 8, 5], [2, 1, 3.5, 7, 3], [1, 3, 4, 5, 6]]
+    };
+
+    const isClient = typeof window !== 'undefined';
+
+    const { Bar } = isClient ? require('react-chartjs-2') : {};
+    const { Button, Input } = isClient ? require('mdbreact') : {};
+
+    const data = {
+      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      datasets: [
+        {
+          label: 'My First dataset',
+          backgroundColor: 'rgba(255,99,132,0.2)',
+          borderColor: 'rgba(255,99,132,1)',
+          borderWidth: 1,
+          hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+          hoverBorderColor: 'rgba(255,99,132,1)',
+          data: [65, 59, 80, 81, 56, 55, 40]
+        }
+      ]
+    };
 
     return (
       <div className={styles.home}>
@@ -54,7 +67,7 @@ export default class Home extends Component {
 
             <h2>{config.app.description}</h2>
 
-            {this.state.showMap ? (
+            {isClient ? (
               <form>
                 <p className="h5 text-center mb-4">Sign up</p>
                 <Input label="Your name" icon="user" group type="email" validate error="wrong" success="right" />
@@ -68,7 +81,7 @@ export default class Home extends Component {
               <div>Loading map</div>
             )}
 
-            {this.state.showMap ? (
+            {isClient && (
               <Grid item xs={12} sm={12} md={4}>
                 <ProfileCard
                   avatar={avatar}
@@ -86,9 +99,19 @@ export default class Home extends Component {
                   }
                 />
               </Grid>
-            ) : (
-              <div>Loading map</div>
             )}
+
+            {isClient && <ChartistGraph data={simpleLineChartData} type="Line" />}
+
+            {isClient && (
+              <Bar
+                data={data}
+                options={{
+                  maintainAspectRatio: false
+                }}
+              />
+            )}
+
             <p>
               <a
                 className={styles.github}
