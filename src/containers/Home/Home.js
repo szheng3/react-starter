@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import { CounterButton, GithubButton, ProfileCard } from 'components';
+import {Link} from 'react-router-dom';
+import {CounterButton, GithubButton, ProfileCard} from 'components';
 import config from 'config';
 import Helmet from 'react-helmet';
-import { connect } from 'react-redux';
-import { Grid } from 'material-ui';
+import {connect} from 'react-redux';
+import {Grid} from 'material-ui';
 import 'mdbreact/dist/css/mdb.css';
-import { AccessTime } from 'material-ui-icons';
-import { isClient } from '../../utils/isOnline';
+import {AccessTime} from 'material-ui-icons';
+import {isClient} from '../../utils/isOnline';
 import ChartCard from '../../components/thirdParty/Cards/ChartCard';
 
 @connect(state => ({
@@ -19,7 +19,7 @@ export default class Home extends Component {
     online: PropTypes.bool.isRequired
   };
 
-  rendenr() {
+  render() {
     require('./home.css');
     const { online } = this.props;
     const styles = require('./Home.scss');
