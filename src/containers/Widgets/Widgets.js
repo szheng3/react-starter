@@ -9,7 +9,7 @@ import { WidgetForm } from 'components';
 const { isLoaded, load: loadWidgets } = widgetActions;
 
 @provideHooks({
-  defer: ({ store: { dispatch, getState, inject } }) => {
+  fetch: ({ store: { dispatch, getState, inject } }) => {
     inject({ widgets: reducer });
 
     if (!isLoaded(getState())) {

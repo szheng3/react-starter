@@ -60,15 +60,17 @@ export default class Home extends Component {
             <h2>{config.app.description}</h2>
 
             {isClient && (
-              <form>
-                <p className="h5 text-center mb-4">Sign up</p>
-                <Input label="Your name" icon="user" group type="email" validate error="wrong" success="right" />
-                <Input label="Your email" icon="envelope" group type="email" validate error="wrong" success="right" />
-                <Input label="Your password" icon="lock" group type="password" validate />
-                <div className="text-center">
-                  <Button color="deep-orange">Sign up</Button>
-                </div>
-              </form>
+              <div>
+                <form>
+                  <p className="h5 text-center mb-4">Sign up</p>
+                  <Input label="Your name" icon="user" group type="email" validate error="wrong" success="right" />
+                  <Input label="Your email" icon="envelope" group type="email" validate error="wrong" success="right" />
+                  <Input label="Your password" icon="lock" group type="password" validate />
+                  <div className="text-center">
+                    <Button color="deep-orange">Sign up</Button>
+                  </div>
+                </form>
+              </div>
             )}
 
             {isClient && (
